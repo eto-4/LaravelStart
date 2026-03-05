@@ -89,3 +89,15 @@ Route::get(
     function() use ($tasks) {
     return view('tasks.index', ['tasks' => $tasks]);
 })->name('tasks.index');
+
+Route::get(
+    '/tasks/{id}',
+    function ($id) use ($tasks) {
+        $task = collect($tasks)->firstWhere('id', $id);
+
+        if (!$tasks) {
+            abort(Response::HTTP_NOT_FOUND);
+        }
+
+        return view('tasks.show', ['task' => $task]);
+    })->name('tasks.show');
