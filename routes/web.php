@@ -21,3 +21,10 @@ Route::get(
     'titol' => '[a-zA-Z ]+',
     'data'   => '[0-9]{4}'
 ])->name('pelicula');
+
+// Rutes amb Restricció global
+Route::get(
+    '/codi-postal/{codi_postal}', 
+    function($codi_postal) {
+        return "Ruta 1 - Codi postal: " . $codi_postal;
+    });
