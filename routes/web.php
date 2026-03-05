@@ -6,7 +6,7 @@ Route::get('/', function () {
     $hola = "Hola, ";
     $mon = "món!";
     return view('welcome', compact('hola', 'mon'));
-});
+})->name('home');
 Route::get(
     '/pelicula/{titol?}/{data?}', 
     function (
@@ -20,4 +20,4 @@ Route::get(
 })->where([
     'titol' => '[a-zA-Z ]+',
     'data'   => '[0-9]{4}'
-]);
+])->name('pelicula');
