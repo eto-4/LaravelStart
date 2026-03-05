@@ -7,3 +7,6 @@ Route::get('/', function () {
     $mon = "món!";
     return view('welcome', compact('hola', 'mon'));
 });
+Route::get('/pelicula', function() {
+    return view('pelicula');
+});
