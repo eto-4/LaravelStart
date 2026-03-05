@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="ca">
-<head>
-    <meta charset="UTF-8">
-    <title>Tasks</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', 'Llista de tasques')
+
+@section('content')
     <h1>Llista de tasques</h1>
 
     @forelse ($tasks as $task)
         <div>
-            <a href="{{ route('tasks.show', $task->id) }}"><h2>{{ $task->title }}</h2></a>
+            <a href="{{ route('tasks.show', $task->id) }}">{{ $task->title }}</a>
         </div>
     @empty
         <p>No hi ha tasques.</p>
     @endforelse
-
-</body>
-</html>
+@endsection

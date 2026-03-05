@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="ca">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ $task->title }}</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', 'Tasca')
+
+@section('content')
     <h1>{{ $task->title }}</h1>
     <p>{{ $task->description }}</p>
     @if ($task->long_description)
@@ -12,5 +10,4 @@
     @endif
     <p>Completada: {{ $task->completed ? 'Sí' : 'No' }}</p>
     <p>Creada: {{ $task->created_at }}</p>
-</body>
-</html>
+@endsection
